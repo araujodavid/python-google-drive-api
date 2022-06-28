@@ -31,3 +31,14 @@ def retrieve_all_folders(api_ref):
             break
 
     return folders_dict
+
+
+def retrieve_subfolders(target_root_folder, folders_dict):
+    """
+    Yield recursively subfolders of the target root folder.
+    :param folders_dict: The dictionary returned by `retrieve_all_folders`.
+    """
+    aux_folders_list = [key for key, value in folders_dict.items() if value == root_target_folder]
+    for sub_folder in aux_folders_list:  # For each subfolder...
+        yield sub_folder
+        yield from retrieve_subfolders(sub_folder, folders_dict)
