@@ -1,6 +1,6 @@
 # python-google-drive-api
 
-Python script to search folders and sub-folders in Google Drive.
+Python script to recursively list all files from a target folder in Google Drive.
 
 Install dependencies:
 
